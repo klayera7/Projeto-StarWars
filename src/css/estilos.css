@@ -1,0 +1,168 @@
+body {
+	font-family: "Poppins", sans-serif;
+	max-width: 1280px;
+	margin: 0 auto;
+}
+
+.carrossel {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	z-index: -1;
+}
+
+.informacoes {
+	display: none;
+}
+
+.informacoes.ativa {
+	display: block;
+}
+
+.conteudo {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-evenly;
+	min-height: 100vh;
+}
+
+.informacoes h1 {
+	font-size: 35px;
+	color: red;
+	margin-bottom: 80px;
+	font-family: "GOT";
+	letter-spacing: 8px;
+}
+
+@font-face {
+	font-family: "GOT";
+	src: url(../fontes/GOT.ttf);
+}
+
+.informacoes .descricao {
+	width: 49%;
+	font-size: 24px;
+	color: #ffffff;
+	line-height: 40px;
+	height: 300px;
+	overflow: auto;
+	padding-right: 15px;
+}
+
+
+.social-buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+    box-shadow: 0px 0px 15px #00000027;
+    padding: 10px; 
+    border-radius: 5em;
+    position: fixed; 
+    bottom: 20px; 
+    right: 20px; 
+    gap: 10px; 
+}
+
+.social-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px; 
+    height: 40px;
+    border-radius: 50%;
+    margin: 0; 
+    background-color: #fff;
+    box-shadow: 0px 0px 4px #00000027;
+    transition: 0.3s;
+}
+
+.social-button:hover {
+    background-color: #f2f2f2;
+    box-shadow: 0px 0px 6px 3px #00000027;
+}
+
+.social-buttons svg {
+    transition: 0.3s;
+    height: 18px; 
+}
+
+.github {
+    background-color: #333;
+}
+
+.github svg {
+    width: 22px; 
+    height: 22px; 
+    fill: #f2f2f2;
+}
+
+.github:hover svg {
+    fill: #333;
+}
+
+.botoes-carrossel {
+	display: flex;
+	justify-content: center;
+	gap: 20px;
+}
+
+.botoes-carrossel .botao {
+    background-color: #ffffff;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    border: 2px solid transparent;
+    cursor: pointer;
+    border-color: #ffffff;
+    transform: scale(1.1);
+    box-shadow: 0 2px 4px rgba(255, 0, 0, 0.3); 
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.botoes-carrossel .botao:hover {
+    background-color: #ffe6e6; 
+    border-color: #ff0000; 
+    box-shadow: 0 4px 8px rgba(255, 0, 0, 0.5); 
+    transform: scale(1.5); 
+}
+
+.botoes-carrossel .botao.selecionado {
+    background-color: red;
+    transform: scale(0.90);
+    border-color: crimson;
+    box-shadow: 0 4px 8px rgba(255, 0, 0, 0.7); 
+}
+
+.imagem {
+	width: 100vw;
+	height: 100vh;
+	object-fit: cover;
+	display: none;
+}
+
+.imagem.ativa {
+	display: block;
+	animation: mudarImagem 0.7s;
+}
+
+@keyframes mudarImagem {
+	from {
+		opacity: 0.85;
+	}
+	to {
+		opacity: 1;
+	}
+}
+
+main:after {
+	content: "";
+	min-height: 100vh;
+	width: 100vw;
+	position: fixed;
+	top: 0;
+	left: 0;
+    background: linear-gradient(120deg, rgba(0, 0, 0, 1) 10%, rgba(0, 0, 0, 0.05926120448179273) 50%, rgba(0, 0, 0, 1) 90%);
+    z-index: -1;
+}
